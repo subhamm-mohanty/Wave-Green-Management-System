@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Worker Management</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #004d40;
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+.btn {
+    background-color: #00796b;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.btn:hover {
+    background-color: #004d40;
+    transform: scale(1.05);
+}
+
+main {
+    margin-top: 20px;
+}
+
+.section {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+.section h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: #004d40;
+    border-bottom: 2px solid #004d40;
+    padding-bottom: 10px;
+}
+
+.search-bar {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+table th {
+    background-color: #00796b;
+    color: #fff;
+    font-weight: 600;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tbody tr:hover {
+    background-color: #e0f2f1;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+.worker-info {
+    padding: 15px;
+    background-color: #e0f2f1;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.worker-info p {
+    margin: 10px 0;
+    font-size: 1rem;
+}
+
+.worker-info span {
+    font-weight: 600;
+}
+
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    resize: vertical;
+}
+
+input[type="date"] {
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.tracking-map {
+    background-color: #e0f2f1;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+form button[type="submit"] {
+    margin-top: 15px;
+    background-color: #004d40;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form button[type="submit"]:hover {
+    background-color: #00332a;
+    transform: scale(1.05);
+}
+
+    </style>
+</head>
+<body>
+   
+    <div class="container">
+        <header>
+            <h1>Admin Worker Management</h1>
+            <button class="btn" id="manageWorkersBtn">Manage Workers</button>
+        </header>
+
+        <main>
+            <section id="workerList" class="section">
+                <h2>Worker List</h2>
+                <input type="text" id="search" placeholder="Search workers..." class="search-bar">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Contact</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Worker rows will be added here dynamically -->
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="workerDetails" class="section hidden">
+                <h2>Worker Details</h2>
+                <div class="worker-info">
+                    <p><strong>ID:</strong> <span id="workerId"></span></p>
+                    <p><strong>Name:</strong> <span id="workerName"></span></p>
+                    <p><strong>Contact:</strong> <span id="workerContact"></span></p>
+                    <p><strong>Status:</strong> <span id="workerStatus"></span></p>
+                </div>
+                <button class="btn" id="assignTaskBtn">Assign Task</button>
+                <div id="taskAssignment" class="hidden">
+                    <h3>Assign Task</h3>
+                    <form id="taskForm">
+                        <label for="taskDescription">Task Description:</label>
+                        <textarea id="taskDescription" required></textarea>
+                        <label for="taskDeadline">Deadline:</label>
+                        <input type="date" id="taskDeadline" required>
+                        <button type="submit" class="btn">Assign Task</button>
+                    </form>
+                </div>
+            </section>
+
+            <section id="tracking" class="section">
+                <h2>Real-Time Tracking</h2>
+                <div class="tracking-map">
+                    <!-- Map or tracking visualization -->
+                    <p>Map or real-time tracking visualization here.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js">
+        document.addEventListener('DOMContentLoaded', function() {
+    const manageWorkersBtn = document.getElementById('manageWorkersBtn');
+    const workerList = document.getElementById('workerList');
+    const workerDetails = document.getElementById('workerDetails');
+    const assignTaskBtn = document.getElementById('assignTaskBtn');
+    const taskAssignment = document.getElementById('taskAssignment');
+
+    // Toggle between sections
+    manageWorkersBtn.addEventListener('click', function() {
+        workerList.classList.toggle('hidden');
+        workerDetails.classList.toggle('hidden');
+    });
+
+    // Show task assignment form
+    assignTaskBtn.addEventListener('click', function() {
+        taskAssignment.classList.toggle('hidden');
+    });
+
+    // Example function to handle task form submission
+    document.getElementById('taskForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        alert('Task assigned successfully!');
+    });
+
+    // Example data (this would be dynamically generated in a real application)
+    const workerData = [
+        { id: 1, name: 'John Doe', contact: '123-456-7890', status: 'Active' },
+        { id: 2, name: 'Jane Smith', contact: '987-654-3210', status: 'Inactive' }
+    ];
+
+    const tbody = document.querySelector('table tbody');
+    workerData.forEach(worker => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${worker.id}</td>
+            <td>${worker.name}</td>
+            <td>${worker.contact}</td>
+            <td>${worker.status}</td>
+            <td><button class="btn" onclick="viewWorker(${worker.id})">View</button></td>
+        `;
+        tbody.appendChild(row);
+    });
+});
+
+function viewWorker(id) {
+    // Example function to view worker details
+    const workerDetails = document.getElementById('workerDetails');
+    workerDetails.classList.remove('hidden');
+    document.getElementById('workerId').textContent = id;
+    document.getElementById('workerName').textContent = 'John Doe'; // Example data
+    document.getElementById('workerContact').textContent = '123-456-7890'; // Example data
+    document.getElementById('workerStatus').textContent = 'Active'; // Example data
+}
+
+    </script>
+</body>
+</html>

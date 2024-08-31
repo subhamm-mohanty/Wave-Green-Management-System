@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awareness - Re-Green</title>
+    <style>
+        /* Basic Reset */
+        body, h1, h2, p, ul, li {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body and Typography */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+            padding: 0 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: #00796b;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #c8e6c9;
+            text-decoration: underline;
+        }
+
+        /* Main Content */
+        main {
+            flex: 1;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+
+        /* Section Styling */
+        section {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        /* Section Animations */
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background-color: #00796b;
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+            transform-origin: top;
+        }
+
+        section:hover::before {
+            transform: scaleY(1);
+        }
+
+        h2 {
+            color: #00796b;
+            margin-bottom: 10px;
+            transition: color 0.3s ease;
+        }
+
+        h2:hover {
+            color: #004d40;
+        }
+
+        /* List Styling */
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        /* Call-to-Action Button */
+        .cta-button {
+            display: inline-block;
+            background-color: #00796b;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #004d40;
+            transform: scale(1.05);
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #00796b;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+            position: relative;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Re-Green's Awareness Page</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="complaint.html">Complaints</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </header>
+    <main>
+        <section class="intro">
+            <h2>The Importance of Waste Management</h2>
+            <p>Effective waste management is crucial for maintaining a clean and healthy environment. By properly managing waste, we can reduce pollution, conserve resources, and promote sustainability. Our Re-Green system is designed to tackle waste management challenges using advanced technology, ensuring efficient collection and recycling processes.</p>
+        </section>
+        <section class="impact">
+            <h2>Environmental Impact</h2>
+            <p>Improper waste disposal can lead to severe environmental issues, including pollution of water sources, air contamination, and habitat destruction. Our smart waste management system helps mitigate these problems by ensuring timely collection and efficient recycling. Through our innovative approach, we aim to protect natural resources and reduce our carbon footprint.</p>
+            <p>By participating in our recycling programs and following best practices in waste management, you contribute to a cleaner, greener planet. Together, we can make a significant impact and foster a culture of sustainability.</p>
+        </section>
+        <section class="get-involved">
+            <h2>How You Can Get Involved</h2>
+            <p>Join us in our mission to create a cleaner environment by taking simple steps in your daily life. Here are some ways you can contribute:</p>
+            <ul>
+                <li>Recycle your waste properly and use our scrap submission portal to facilitate recycling.</li>
+                <li>Participate in community clean-up drives and awareness campaigns.</li>
+                <li>Educate others about the importance of waste management and sustainable practices.</li>
+                <li>Provide feedback and suggestions through our website to help us improve our services.</li>
+            </ul>
+        </section>
+        <section class="call-to-action">
+            <h2>Get Started Today</h2>
+            <p>Ready to make a difference? Visit our website to learn more about our smart waste management system and how you can get involved. Together, we can achieve a cleaner, greener future.</p>
+            <a href="contact.html" class="cta-button">Contact Us</a>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Re-Green. All rights reserved.</p>
+    </footer>
+</body>
+</html>

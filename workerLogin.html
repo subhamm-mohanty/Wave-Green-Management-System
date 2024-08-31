@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Smart Waste Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <header>
+        <h1>Wave Green Management</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle">Login</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="userLogin.html">User</a></li>
+                    <li><a href="workerLogin.html">Worker</a></li>
+                    <li><a href="adminLogin.html">Admin</a></li>
+                  </ul>
+                </li>
+                <li><a href="reports.html">Reports</a></li>
+                <li><a href="complaints.html">Complaints</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+               
+            </ul>
+        </nav>
+    </header>
+
+    
+        <div class="login-container">
+            <h2>Worker Login</h2>
+            <form id="login-form">
+              <label for="username">Username:</label>
+              <input type="text" id="username" name="username"><br><br>
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email"><br><br>
+              <label for="password">Password:</label>
+              <input type="password" id="password" name="password"><br><br>
+              <button style="width: 100%;"><a href="worker.html" style="text-decoration: none;">Submit</a></button>
+              <br><br>
+              <button style="width: 100%;"><a href="#" style="text-decoration: none;">Forgot Password</a></button>
+
+            </form>
+          </div>
+    
+
+    <footer>
+        <p>&copy; 2024 Smart Waste Management System. All rights reserved.</p>
+        <div class="social-media">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">LinkedIn</a>
+        </div>
+    </footer>
+
+    <script src="script.js">
+
+        const form = document.getElementById('login-form');
+        
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const username = document.getElementById('username').value;
+          const email = document.getElementById('email').value;
+          const password = document.getElementById('password').value;
+        
+          // Add your login logic here
+          console.log(`Username: ${username}, Email: ${email}, Password: ${password}`);
+        });
+          </script>
+</body>
+</html>

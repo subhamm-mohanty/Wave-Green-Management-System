@@ -1,0 +1,409 @@
+/* Reset some default styles */
+body, h1, h2, h3, h4, p, ul, li, form, input, textarea, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* Header styles */
+header {
+    background: #009688;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #cddc39;
+}
+
+/* Hero section styles */
+.hero {
+    background: url('hero-bg.jpg') no-repeat center center/cover;
+    color: #fff;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.hero button {
+    background: #cddc39;
+    color: #000;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+.hero button:hover {
+    background: #aebc00;
+}
+
+/* Sections styles */
+section {
+    padding: 2rem 1rem;
+}
+
+h2, h3 {
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+.service, .report, .team-member {
+    background: #fff;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.team-member img {
+    max-width: 100px;
+    border-radius: 50%;
+}
+
+/* Forms styles */
+form {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+form input, form textarea, form select {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    background: #009688;
+    color: #fff;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+form button:hover {
+    background: #00796b;
+}
+
+/* Footer styles */
+footer {
+    background: #009688;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+footer .social-media {
+    margin-top: 1rem;
+}
+
+footer .social-media a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
+
+footer .social-media a:hover {
+    color: #cddc39;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero button {
+        font-size: 0.9rem;
+    }
+}
+
+
+/* Complaints form design */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+  }
+  
+  #issue-form {
+    width: 50%;
+    margin: 40px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  
+  #issue-description {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  #photo-upload {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  #submit-btn {
+    width: 100%;
+    height: 40px;
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #submit-btn:hover {
+    background-color: #3e8e41;
+  }
+  
+  h2 {
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+
+
+
+  /* User Loging,Worker Login, Admin Login Design */
+  .login{
+    text-decoration: none;
+}
+
+.login-container {
+width: 450px;
+margin: 50px auto;
+padding: 20px;
+border: 2px solid #3b11b9;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+display: block;
+margin-bottom: 10px;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+width: 100%;
+height: 40px;
+margin-bottom: 20px;
+padding: 10px;
+border: 1px solid #ccc;
+}
+
+input[type="submit"] {
+width: 100%;
+height: 40px;
+background-color: #4CAF50;
+color: #fff;
+padding: 10px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+
+input[type="submit"]:hover {
+background-color: #3e8e41;
+}
+
+/* Code for disply paragrap in left */
+.container {
+    display: flex;
+    justify-content: space-between; 
+    padding: 20px;
+}
+
+.paragraph {
+    width: 100%; 
+    text-align: left; 
+    font-size: 18px; 
+}
+
+.image {
+    width: 30%; 
+    text-align: center; 
+}
+
+.video {
+    width: 30%; 
+    text-align: right; 
+}
+
+/* index login page design */
+.dropdown {
+    position: relative;
+  }
+  
+  .dropdown-toggle {
+    cursor: pointer;
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    padding: 10px;
+    display: none;
+  }
+  
+  .dropdown-menu li {
+    margin-bottom: 10px;
+  }
+  
+  .dropdown-menu a {
+    color: #fff;
+  }
+  
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+
+  /* Index page logo */
+  .logoIndex {
+    margin-right: 1400px;
+  }
+  
+  .logoIndex img {
+    width:5rem;
+    height: auto;
+    border-radius: 50%;
+  }
+  #Ltest{
+    font-size: 20px;
+    
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+
+
+  /* reportsMapImage Design */
+  #reportsMapImage
+  {
+    width:100%;
+    height: auto;
+  }
+
+
+  /* Track id complaint design */
+#track{
+    width: 500px;
+    height: auto;
+    margin-left: 31%;
+    border: 2px solid blue;
+    padding: 50px;
+    border-radius:20%;
+}
+
+/* Index page Track Waste mngmtact. */
+.ps {
+    font-family: Arial, sans-serif; 
+    font-size: 16px; 
+    line-height: 1.6; 
+    color: #333; 
+    background-color: #f9f9f9;
+    padding: 20px; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  }
+  
+  /* Add hover effect */
+  .ps:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+  }
+  
+  /* Optional: Add animation for initial load */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .ps {
+    animation: fadeIn 1s ease-out; 
+  }

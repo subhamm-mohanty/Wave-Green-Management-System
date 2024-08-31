@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worker Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="worker.css">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #2f80ed, #56ccf2);
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    width: 100%;
+    overflow: hidden;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+header h1 {
+    font-weight: 600;
+    font-size: 28px;
+}
+
+header p {
+    font-weight: 400;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+nav {
+    background: #f4f4f4;
+    padding: 15px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #333;
+    padding: 10px 20px;
+    transition: background 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+    background: #2f80ed;
+    color: #fff;
+    border-radius: 6px;
+}
+
+.content-section {
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.content-section h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.content-section p {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 25px;
+    color: #555;
+}
+
+.primary-button {
+    background: #2f80ed;
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.primary-button:hover {
+    background: #256cbf;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Worker Management Portal</h1>
+            <p>Efficiently manage your tasks and track your progress</p>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="#tasks">My Tasks</a></li>
+                <li><a href="#tracking">Track Vehicle</a></li>
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#logout">Logout</a></li>
+            </ul>
+        </nav>
+        <section id="tasks" class="content-section">
+            <h2>Assigned Tasks</h2>
+            <p>View your assigned tasks, update progress, and communicate with the admin.</p>
+            <button class="primary-button">View Tasks</button>
+        </section>
+        <section id="tracking" class="content-section">
+            <h2>Track Vehicle</h2>
+            <p>Track your assigned vehicle in real-time and optimize your route.</p>
+            <button class="primary-button">Track Now</button>
+        </section>
+    </div>
+</body>
+</html>

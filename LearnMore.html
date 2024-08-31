@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Re-Green Blog - Learn More</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 3em;
+            color: #2d6a4f;
+            font-weight: 700;
+            animation: slideInDown 1s ease;
+        }
+
+        header p {
+            font-size: 1.3em;
+            color: #555;
+            margin-top: 10px;
+            animation: slideInUp 1s ease;
+        }
+
+        .marquee-container {
+            margin: 20px 0;
+            background-color: #2d6a4f;
+            color: white;
+            padding: 10px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        marquee {
+            font-size: 1.2em;
+            font-weight: 500;
+        }
+
+        .blog-post {
+            display: flex;
+            align-items: center;
+            margin-bottom: 60px;
+            overflow: hidden;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 12px;
+            position: relative;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .blog-post img {
+            width: 45%;
+            border-radius: 12px;
+            margin-left: 20px;
+            transition: transform 0.3s ease-in-out;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .blog-post img:hover {
+            transform: scale(1.05);
+        }
+
+        .blog-post h2 {
+            font-size: 2.5em;
+            color: #2d6a4f;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .blog-post p {
+            font-size: 1.2em;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        @keyframes slideInDown {
+            0% {
+                transform: translateY(-50%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInUp {
+            0% {
+                transform: translateY(50%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .animated {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Re-Green Blog - Learn More</h1>
+            <p>Explore the challenges we face in waste management and the innovative solutions we offer.</p>
+        </header>
+
+        <div class="marquee-container">
+            <marquee behavior="scroll" direction="left">Re-Green: Pioneering the future of sustainable waste management.</marquee>
+        </div>
+
+        <!-- Blog Post 1 -->
+        <div class="blog-post" id="post1">
+            <div class="text">
+                <h2>The Global Waste Crisis</h2>
+                <p>The world is facing a mounting waste crisis, with millions of tons of waste being generated daily. The impact is far-reaching, affecting the environment, public health, and even the economy. Landfills are overflowing, oceans are polluted with plastics, and many communities lack effective waste management systems.</p>
+                <p>In urban areas, waste management infrastructure is often insufficient, leading to the improper disposal of waste, which contaminates water bodies, soil, and air. The waste crisis is not just an environmental issue; it's a social and economic one too.</p>
+            </div>
+            <img src="global_waste_crisis.jpg" alt="Global Waste Crisis Image">
+        </div>
+
+        <!-- Blog Post 2 -->
+        <div class="blog-post" id="post2">
+            <div class="text">
+                <h2>Challenges in Waste Management</h2>
+                <p>Managing waste effectively is a complex challenge that requires coordinated efforts from governments, communities, and individuals. Some of the main challenges include the lack of infrastructure for waste collection, inadequate recycling facilities, and the sheer volume of waste produced by growing populations and economies.</p>
+                <p>In many regions, waste is not segregated at the source, leading to the contamination of recyclable materials. Additionally, the transportation of waste to disposal sites is often inefficient, resulting in increased costs and carbon emissions.</p>
+            </div>
+            <img src="waste_management_challenges.jpg" alt="Waste Management Challenges Image">
+        </div>
+
+        <!-- Blog Post 3 -->
+        <div class="blog-post" id="post3">
+            <div class="text">
+                <h2>Re-Green's Innovative Approach</h2>
+                <p>Re-Green aims to revolutionize the way waste is managed by integrating cutting-edge technology with sustainable practices. Our approach includes the use of smart sensors, AI-driven analytics, and cloud-based monitoring systems to optimize waste collection and recycling processes.</p>
+                <p>By implementing a smart waste management system, we can monitor the fill levels of waste bins in real-time, predict the optimal collection times, and reduce the environmental impact of waste disposal. This not only improves efficiency but also promotes recycling and the responsible management of resources.</p>
+            </div>
+            <img src="regreen_innovation.jpg" alt="Re-Green's Innovative Approach Image">
+        </div>
+
+        <!-- Blog Post 4 -->
+        <div class="blog-post" id="post4">
+            <div class="text">
+                <h2>Solutions We Provide</h2>
+                <p>At Re-Green, our solutions are designed to address the core issues in waste management. We focus on enhancing waste collection efficiency, reducing landfill dependency, and promoting recycling. Our system includes features such as automated route planning for waste collection vehicles, which minimizes fuel consumption and reduces operational costs.</p>
+                <p>We also offer a platform for communities to participate in recycling programs, where users can easily submit images of their recyclable materials, and our team arranges for their collection. This incentivizes recycling and reduces the overall waste footprint.</p>
+            </div>
+            <img src="solutions.jpg" alt="Solutions We Provide Image">
+        </div>
+
+        <!-- Blog Post 5 -->
+        <div class="blog-post" id="post5">
+            <div class="text">
+                <h2>The Impact of Our Work</h2>
+                <p>Our efforts are already making a difference. Communities that have adopted the Re-Green system have seen significant improvements in waste management efficiency, a reduction in illegal dumping, and an increase in recycling rates. Our data-driven approach allows us to continuously refine our processes and deliver better results for the environment and society.</p>
+                <p>We believe that through innovation and collaboration, we can create a cleaner, greener future. Our commitment to sustainability drives everything we do, and we're proud to be at the forefront of the waste management revolution.</p>
+            </div>
+            <img src="impact.jpg" alt="Impact of Our Work Image">
+        </div>
+
+        <div class="marquee-container">
+            <marquee behavior="scroll" direction="right">Join Re-Green in our mission to transform waste into resources and create a sustainable future.</marquee>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('scroll', function() {
+            const blogPosts = document.querySelectorAll('.blog-post');
+            blogPosts.forEach(post => {
+                const postPosition = post.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (postPosition < windowHeight * 0.75) {
+                    post.classList.add('animated');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

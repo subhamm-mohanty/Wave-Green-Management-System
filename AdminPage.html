@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Re-Green Admin Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #2E7D32;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        header:hover {
+            background-color: #1B5E20;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+            margin-top: 10px;
+            gap: 20px;
+        }
+
+        nav ul li {
+            transition: transform 0.3s ease;
+        }
+
+        nav ul li:hover {
+            transform: scale(1.1);
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.1);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #388E3C;
+            color: #FFF;
+        }
+
+        /* Main Content Styling */
+        main {
+            padding: 30px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        section h2 {
+            font-size: 2.4rem;
+            color: #2E7D32;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #4CAF50;
+            padding-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+        }
+
+        section h2::before {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: #81C784;
+        }
+
+        .overview-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .overview-item {
+            flex: 1;
+            min-width: 280px;
+            background-color: #FFF;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .overview-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .overview-item h3 {
+            font-size: 1.6rem;
+            color: #388E3C;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            border-bottom: 2px solid #81C784;
+            padding-bottom: 5px;
+            position: relative;
+        }
+
+        .overview-item h3::before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: #66BB6A;
+        }
+
+        .overview-item p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .overview-item .btn {
+            display: inline-block;
+            padding: 12px 20px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: #388E3C;
+            color: #FFF;
+        }
+
+        .overview-item .btn:hover {
+            background-color: #2E7D32;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .overview-item .btn:active {
+            background-color: #1B5E20;
+            transform: translateY(0);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Admin Dashboard Section */
+        .dashboard {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .card {
+            flex: 1;
+            min-width: 300px;
+            background-color: #FFF;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .card h3 {
+            font-size: 1.8rem;
+            color: #2E7D32;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            border-bottom: 3px solid #4CAF50;
+            padding-bottom: 10px;
+            position: relative;
+        }
+
+        .card h3::before {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: #81C784;
+        }
+
+        .card p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .card .btn {
+            display: inline-block;
+            padding: 12px 20px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: #388E3C;
+            color: #FFF;
+        }
+
+        .card .btn:hover {
+            background-color: #2E7D32;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .card .btn:active {
+            background-color: #1B5E20;
+            transform: translateY(0);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #2E7D32;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            margin-top: 40px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            font-size: 1rem;
+        }
+
+        footer a {
+            color: #FFF;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #81C784;
+        }
+
+        /* Additional Styling for Forms */
+        form {
+            background-color: #FFF;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        form:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        form label {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            display: block;
+            color: #333;
+        }
+
+        form input[type="text"], form input[type="email"], form input[type="password"], form textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 15px;
+            transition: border-color 0.3s ease;
+        }
+
+        form input[type="text"]:focus, form input[type="email"]:focus, form input[type="password"]:focus, form textarea:focus {
+            border-color: #388E3C;
+            outline: none;
+        }
+
+        form button {
+            background-color: #388E3C;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1rem;
+            color: #FFF;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        form button:hover {
+            background-color: #2E7D32;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        form button:active {
+            background-color: #1B5E20;
+            transform: translateY(0);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Re-Green Admin Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="reports.html">Reports</a></li>
+                <li><a href="complaints.html">Complaints</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <h2>Dashboard Overview</h2>
+            <div class="overview-container">
+                <div class="overview-item">
+                    <h3>Real Time Monitoring</h3>
+                    <p>Admin can monitor the sensors and capture images in real time</p>
+                    <button class="btn"> Track Sensors</button>
+                </div>
+                <div class="overview-item">
+                    <h3>Vehicle Management</h3>
+                    <p>He can tfrack the vehicles and the work process</p>
+                    <button class="btn">Track vehicles</button>
+                </div>
+                <div class="overview-item">
+                    <h3>Worker Management</h3>
+                    <p>he can manage workers and track the work process</p>
+                    <button class="btn">Track Workers</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="home">
+            <!-- <h2>Dashboard Overview</h2> -->
+            <div class="overview-container">
+                <div class="overview-item">
+                    <h3>Total Waste Collected</h3>
+                    <p>View the total amount of waste collected from various dustbins and areas.</p>
+                    <button class="btn">View Details</button>
+                </div>
+                <div class="overview-item">
+                    <h3>Active Complaints</h3>
+                    <p>Check the list of active complaints related to waste management.</p>
+                    <button class="btn">View Complaints</button>
+                </div>
+                <div class="overview-item">
+                    <h3>Recent Reports</h3>
+                    <p>Access the latest reports and analytics on waste management.</p>
+                    <button class="btn">View Reports</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="reports">
+            <h2>Reports</h2>
+            <div class="dashboard">
+                <div class="card">
+                    <h3>Monthly Report</h3>
+                    <p>Details of waste collection for the current month.</p>
+                    <button class="btn">Download Report</button>
+                </div>
+                <div class="card">
+                    <h3>Annual Report</h3>
+                    <p>Comprehensive report of the year's waste management activities.</p>
+                    <button class="btn">Download Report</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="complaints">
+            <h2>Complaints</h2>
+            <form action="#">
+                <label for="complaint">Your Complaint:</label>
+                <textarea id="complaint" rows="5" placeholder="Describe your complaint here..."></textarea>
+                <button type="submit">Submit Complaint</button>
+            </form>
+        </section>
+
+        <!-- <section id="contact">
+            <h2>Contact Us</h2>
+            <p>If you have any questions, please feel free to contact us.</p>
+            <p>Email: support@re-green.com</p>
+            <p>Phone: +123-456-7890</p>
+        </section> -->
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Re-Green. All rights reserved. <a href="#">Privacy Policy</a></p>
+    </footer>
+</body>
+</html>

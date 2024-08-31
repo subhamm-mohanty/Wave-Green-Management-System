@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Waste Management </title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logoIndex">
+            <img src="greenLogo.jpg" alt="Logo">
+            <span id="Ltest"><span style="color: rgb(17, 255, 17);font-size: 25px;">Green</span>Minds</span>
+          </div>
+        
+        <nav style="margin-top: -100px;">
+            <h1>Wave Green Management</h1>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Login</a>
+                    <ul class="dropdown-menu">
+                      <li><a href="userLogin.html">User</a></li><hr>
+                      <li><a href="workerLogin.html">Worker</a></li><hr>
+                      <li><a href="adminLogin.html">Admin</a></li>
+                    </ul>
+                  </li>
+                <li><a href="reports.html">Reports</a></li>
+                <li><a href="complaints.html">Complaints</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <!-- <li><a href="dashboard.html">Dashboard</a></li> -->
+                <li><a href="ourness.html">Awarness</a></li>
+               
+               
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Transforming Waste into Resources for a Greener Future</h2>
+        <button onclick="location.href='LearnMore.html'">Learn More</button>
+        <button onclick="location.href='complaints.html'">Report a Problem</button>
+        <button onclick="location.href='#'">Track My City</button>
+    </section>
+
+    <section class="interactive-map">
+        <h3>Track Waste Management Activities</h3>
+        <div class="container">
+            <div class="paragraph">
+                <p class="ps">Welcome to Re-Green, the cutting-edge solution transforming waste management for a cleaner, greener future. Our smart waste management system is designed to tackle the inefficiencies of traditional waste collection methods by integrating advanced technologies like IoT sensors and AI. With real-time monitoring of waste bins and optimized collection routes, we ensure timely waste removal while reducing environmental impact. Our innovative approach not only improves operational efficiency but also enhances public health and cleanliness in urban and rural areas alike.</p>
+                <p class="ps">Our system utilizes ultrasonic sensors to track the fill levels of waste bins, sending automated alerts when they reach capacity. This real-time data is processed through our cloud-based platform, which uses AI algorithms to determine the most efficient collection routes. By minimizing unnecessary trips and optimizing resource allocation, we reduce fuel consumption and operational costs. The GPS tracking feature further enhances transparency and accountability, allowing for real-time monitoring of collection vehicles and ensuring that waste management processes are executed smoothly and effectively.</p>
+                
+                <p class="ps">In addition to its technological advancements, Re-Green focuses on engaging the community through our user-friendly web portal. This platform allows residents to report issues, track the status of waste bins, and submit images of waste materials for recycling. By actively involving the public, we promote a culture of sustainability and encourage responsible waste management practices. Our system also supports educational initiatives and awareness campaigns to inform and empower individuals about the importance of recycling and proper waste disposal.</p>
+                
+                <p class="ps">Looking to the future, Re-Green plans to expand its capabilities and reach even more communities. We are exploring the integration of blockchain technology to enhance the transparency and security of our waste management processes. Our goal is to continuously improve and innovate, setting new standards in environmental sustainability and operational excellence. With Re-Green, we are committed to making a positive impact on the environment and creating a cleaner, more efficient waste management system for all.</p>
+            </div>
+            
+            <div class="video">
+                <video width="320" height="425" autoplay muted loop controls>
+                    <source src="sih.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>  
+            <!-- <div class="image">
+                <img src="" alt="An image">
+            </div> -->
+        </div>
+    </section>
+
+    <section class="statistics">
+        <h3>Real-Time Statistics</h3>
+        <div class="stats">
+            <div>Waste Collected: <span id="waste-collected">120</span> tons</div>
+            <div>Recycling Rate: <span id="recycling-rate">75%</span></div>
+            <div>Air Quality: <span id="air-quality">Moderate</span></div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <h3>What People Are Saying</h3>
+        <div class="testimonial">
+            <p>"The most efficient waste management system we’ve ever seen!"</p>
+            <cite>— City Official</cite>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Smart Waste Management System. All rights reserved.</p>
+        <div class="social-media">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">LinkedIn</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        const video = document.getElementById('myVideo');
+      
+        video.addEventListener('pause', function() {
+          video.currentTime = video.currentTime; // Ensures the sound pauses
+        });
+      </script>
+</body>
+
+</html>

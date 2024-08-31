@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaints - Smart Waste Management System</title>
+    <link rel="stylesheet" href="styles.css">
+   
+</head>
+<body>
+    <header>
+        <div class="logoIndex">
+            <img src="greenLogo.jpg" alt="Logo">
+            <span id="Ltest"><span style="color: rgb(17, 255, 17);font-size: 25px;">Green</span>Minds</span>
+          </div>
+        
+        <nav style="margin-top: -100px;">
+            <h1>Wave Green Management</h1>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Login</a>
+                    <ul class="dropdown-menu">
+                      <li><a href="userLogin.html">User Login</a></li>
+                      <li><a href="workerLogin.html">Worker Login</a></li>
+                      <li><a href="adminLogin.html">Admin Login</a></li>
+                    </ul>
+                  </li>
+                <li><a href="reports.html">Reports</a></li>
+                <li><a href="complaints.html">Complaints</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <section class="complaints">
+        <h2 style="margin-left:30px;">Submit a Complaint :- </h2>
+        <form id="issue-form" style="border: 3px solid blue;">
+            <h2>Describe the Issue</h2>
+            <textarea id="issue-description" name="issue-description" placeholder="Please describe the issue you are experiencing..."></textarea>
+        
+            <h2>Upload a Photo</h2>
+            <input type="file" id="photo-upload" name="photo-upload" accept="image/*">
+        
+            <button type="submit" id="submit-btn">Submit</button>
+            
+          </form>
+    </section>
+
+    <div id="track">
+        <h3>Track Your Complaint</h3>
+        <input type="text" id="complaint-id" placeholder="Enter Complaint ID">
+        <button onclick="trackComplaint()" id="submit-btn">Track</button>
+        <p id="complaint-status"></p>
+    </div>
+<br><br>
+    <footer>
+        <p>&copy; 2024 Smart Waste Management System. All rights reserved.</p>
+        <div class="social-media">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">LinkedIn</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
