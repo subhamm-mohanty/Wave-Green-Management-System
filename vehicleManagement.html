@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Vehicle Management</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <style>
+        /* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Header Styles */
+.header {
+    background-color: #2196F3;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+.header p {
+    margin: 5px 0 0;
+    font-size: 1.2rem;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* Vehicle Section */
+.vehicle-section, .actions-section, .map-section {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.vehicle-section h2, .actions-section h2, .map-section h2 {
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+.data-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.data-box {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    width: 48%;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.data-box h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+.data-box p {
+    margin: 10px 0;
+    font-size: 1.1rem;
+}
+
+.refresh-btn {
+    display: block;
+    width: 200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    background: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.refresh-btn:hover {
+    background-color: #1e88e5;
+}
+
+/* Actions Section */
+.actions-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.action-btn {
+    width: 32%;
+    padding: 15px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.action-btn:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Map Section */
+.map-section {
+    text-align: center;
+    
+}
+
+
+/* #map {
+    
+    height: 280px;
+    width: 50px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+} */
+
+/* Footer Styles */
+.footer {
+    background-color: #2196F3;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <h1>Vehicle Management Dashboard</h1>
+        <p>Manage and monitor waste collection vehicles</p>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Vehicle Data Section -->
+        <section class="vehicle-section">
+            <h2>Vehicle Data</h2>
+            <div class="data-container">
+                <div class="data-box">
+                    <h3>Vehicle Status</h3>
+                    <p>Truck 1: <span id="vehicle1">Loading...</span></p>
+                    <p>Truck 2: <span id="vehicle2">Loading...</span></p>
+                    <p>Truck 3: <span id="vehicle3">Loading...</span></p>
+                </div>
+                <div class="data-box">
+                    <h3>Location Tracking</h3>
+                    <p>Truck 1: <span id="location1">Loading...</span></p>
+                    <p>Truck 2: <span id="location2">Loading...</span></p>
+                </div>
+            </div>
+            <button class="refresh-btn" onclick="refreshVehicleData()">Refresh Data</button>
+        </section>
+
+        <!-- Actions Section -->
+        <section class="actions-section">
+            <h2>Actions</h2>
+            <div class="actions-container">
+                <button class="action-btn" onclick="addVehicle()">Add Vehicle</button>
+                <button class="action-btn" onclick="editVehicle()">Edit Vehicle</button>
+                <button class="action-btn" onclick="removeVehicle()">Remove Vehicle</button>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section class="map-section">
+            <h2>Vehicle Location Map</h2>
+            <div id="map">
+                <a href="https://maps.app.goo.gl/r2RSSsrnCDLAnsCX9"><img src="map.jpg" alt="vehocleMap" style="width: 450px; align-items: center; margin-left: 6%;"></a> 
+            </div> 
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Smart Waste Management System - Vehicle Management</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
